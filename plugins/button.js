@@ -103,14 +103,15 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       },
 
       '&-gradient': {
-        borderBottom: `2px solid ${theme('colors.primary.light')}`,
-        background: `radial-gradient(100% 100% at 50% 0%, ${formatColor({
+        '--btn-gradient': `radial-gradient(100% 100% at 50% 0%, ${formatColor({
           mode: 'rgba',
           color: parseColor(theme('colors.white.DEFAULT')).color,
           alpha: 0.2,
         })} 0%, transparent 73.05%), radial-gradient(537.14% 76.94% at 30.65% 40.18%, rgba(224, 187, 142, 0.70) 0%, transparent 100%), ${theme(
           'colors.primary.light'
         )}`,
+        borderBottom: `2px solid ${theme('colors.primary.light')}`,
+        background: 'var(--btn-gradient)',
       },
     },
   })

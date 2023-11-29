@@ -7,7 +7,7 @@ import scrollHeader from './ts/scroll-header'
 // import currentTab from './ts/current-tab'
 // import sidebar from './ts/sidebar'
 // import progressLine from './ts/progress-line'
-// import scrollTo from './ts/scroll-to'
+import scrollTo from './ts/scroll-to'
 // import smartMenu from './ts/smart-menu'
 // import social from './ts/social'
 // import draggable from './ts/draggable'
@@ -59,7 +59,7 @@ window.addEventListener('DOMContentLoaded', ((): void => {
   scrollHeader()
   // sidebar()
   // progressLine()
-  // scrollTo()
+  scrollTo()
   // smartMenu()
   // social()
   // draggable()

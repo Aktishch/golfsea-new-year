@@ -12,7 +12,7 @@
   }
 
   &::after {
-    background-color: var(--btn-color);
+    background: var(--btn-gradient);
 
     @apply content-auto absolute -z-1 inset-0 rounded-inherit ease-in-out duration-3;
   }

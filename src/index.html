@@ -16,24 +16,24 @@
 
 <!-- Главный блок -->
 
-<main class="main container flex items-end sm:items-center relative overflow-hidden min-h-[700px] lg:min-h-screen pt-40" data-smooth-wrapper>
+<main class="main container flex items-end sm:items-center relative overflow-hidden min-h-[700px] lg:min-h-screen xxl:min-h-[900px] pt-40" data-smooth-wrapper>
   <div class="main__bg absolute inset-0">
-    <div class="pack bg-gray w-full h-full" data-smooth-layer="bottom" data-smooth-speed="4" data-smooth-depth="2">
+    <div class="pack bg-gray h-full" data-smooth-layer="bottom" data-smooth-speed="4" data-smooth-depth="2">
       <%= loader %>
       <%= picture({src: 'img/pictures/main-bg', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
     </div>
   </div>
   <div class="relative w-full max-w-[550px]">
     <h3 class="font-normal text-18 sm:text-20 xl:text-28 leading-3 mb-2 ease-linear duration-10 clip-path clip-path-up" data-anim="hidden">Русские забавы</h3>
-    <h1 class="font-alt font-medium uppercase text-30 sm:text-40 xl:text-50 leading-3 mb-5 sm:mb-7 xl:mb-11 ease-linear duration-10 clip-path clip-path-up" data-anim="hidden">
+    <h1 class="font-alt font-medium uppercase text-30 sm:text-40 xl:text-50 leading-3 mb-5 sm:mb-7 xl:mb-11 ease-linear duration-10 delay-5 clip-path clip-path-up" data-anim="hidden">
       Новогодний Гала- Ужин <span class="text-primary">в Геленджик Гольф Резорт</span>
     </h1>
-    <p class="font-normal text-14 sm:text-16 mb-5 sm:mb-7 xl:mb-12 ease-linear duration-10 clip-path clip-path-up" data-anim="hidden">
+    <p class="font-normal text-14 sm:text-16 mb-5 sm:mb-7 xl:mb-12 ease-linear duration-10 delay-7 clip-path clip-path-up" data-anim="hidden">
       Встречай Новый 2024 год в эстетичной атмосфер <br>
       Геленджик Гольф Резорт
     </p>
-    <p class="font-normal text-primary text-26 sm:text-34 xl:text-46 leading-3 mb-5 sm:mb-7 xl:mb-12 ease-linear duration-10 clip-path clip-path-up" data-anim="hidden">31 декабря 21:00</p>
-    <button class="btn btn-primary btn-lg btn-fill btn-gradient w-full xs:w-auto" data-waved="dark">Забронировать место</button>
+    <p class="font-normal text-primary text-26 sm:text-34 xl:text-46 leading-3 mb-5 sm:mb-7 xl:mb-12 ease-linear duration-10 delay-10 clip-path clip-path-up" data-anim="hidden">31 декабря 21:00</p>
+    <a class="btn btn-primary btn-lg btn-fill btn-gradient btn-glow font-alt w-full xs:w-max" data-scroll data-waved="dark" href="#reservation">Забронировать место</a>
   </div>
 </main>
 
@@ -86,33 +86,83 @@
   }
 ] %>
 
-<section class="container relative">
-  <div class="absolute inset-0"></div>
+<section class="container relative overflow-hidden pb-0">
+  <div class="absolute inset-0">
+    <div class="pack pack-rect-md w-full h-full">
+      <%= picture({src: 'img/pictures/texture', format: '.png', webp: true, classes: 'image sm:image-scale-down image-top-left sm:image-center', data: false, loading: 'eager'}) %>
+    </div>
+    <div class="absolute -top-80 -right-[70%] opacity-50">
+      <span class="text-primary-light text-[120rem] animate-pulse">
+        <%= icon({id: 'lines'}) %>
+      </span>
+    </div>
+  </div>
   <div class="relative">
-    <h2 class="font-alt font-normal uppercase text-center text-28 sm:text-38 xl:text-48 mb-14">Программа гала-ужина “Русские забавы”</h2>
-    <div class="flex justify-between gap-5">
-      <div class="relative bg-gray w-full max-w-[480px] p-4">
+    <h2 class="font-alt font-normal uppercase text-center text-28 sm:text-38 xl:text-48 mb-7 md:mb-10 xl:mb-14 ease-linear duration-10 clip-path clip-path-down" data-anim="hidden">Программа гала-ужина “Русские забавы”</h2>
+    <div class="flex flex-col xl:flex-row xl:justify-between xl:gap-10">
+      <div class="order-2 xl:order-1 relative w-full sm:max-w-[450px] md:max-w-[600px] xl:max-w-[480px] p-2 sm:p-4 -mt-8 sm:-mt-20 xl:mt-0 mx-auto xl:mx-0 ease-in duration-5 anim anim-right" data-anim="hidden">
         <div class="absolute inset-0">
-          <div class="pack bg-gray w-full h-full" data-smooth-layer="bottom" data-smooth-speed="4" data-smooth-depth="2">
+          <div class="pack bg-gray h-full">
             <%= loader %>
             <%= picture({src: 'img/pictures/programm-bg', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
           </div>
         </div>
-        <div class="relative border border-primary border-solid border-opacity-20 h-full p-6">
-          <ul class="flex flex-col gap-5">
+        <div class="relative border border-primary border-solid border-opacity-20 h-full p-2 sm:p-6">
+          <ul class="flex flex-col gap-5 mb-7 md:mb-10">
             <% _.forEach((programm), (item) => { %>
             <li class="flex items-center">
-              <span class="text-primary-dark text-32 mr-3">
+              <span class="text-primary-dark text-24 sm:text-28 md:text-32 mr-2 sm:mr-3">
                 <%= icon({id: item.icon}) %>
               </span>
-              <span class="font-normal text-18 leading-2"><%= item.text %></span>
+              <span class="font-normal text-14 sm:text-16 md:text-18 leading-2"><%= item.text %></span>
             </li>
             <% }) %>
           </ul>
+          <a class="btn btn-primary btn-lg btn-fill btn-gradient btn-glow font-alt w-full xs:w-max" data-waved="dark" href="" download>СКАЧАТЬ МЕНЮ</a>
+        </div>
+      </div>
+      <div class="order-1 xl:order-2 w-full xl:max-w-[710px] ease-in duration-5 anim anim-left" data-anim="hidden">
+        <div class="pack pack-rect-md md:pack-rect-sm bg-gray h-full -mx-4 sm:mx-0">
+          <%= loader %>
+          <%= picture({src: 'img/pictures/build', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Стоимость -->
+
+<section class="container pb-0">
+  <div class="border border-primary border-solid border-opacity-20 p-2 sm:p-4">
+    <div class="relative">
+      <div class="absolute inset-0">
+        <div class="pack pack-rect-md w-full h-full">
+          <%= picture({src: 'img/pictures/price-bg', format: '.png', webp: true, classes: 'image', data: false, loading: 'eager'}) %>
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5 py-4 sm:py-8 md:py-12 px-2 sm:px-5 md:px-10 lg:px-16">
+        <h2 class="font-alt font-normal uppercase text-28 sm:text-38 xl:text-48 ease-linear duration-10 clip-path clip-path-right" data-anim="hidden">
+          Стоимость <br class="hidden lg:block"> мероприятия
+        </h2>
+        <ul class="flex flex-col gap-2 sm:gap-4">
+          <li class="font-normal leading-2 ease-linear duration-10 clip-path clip-path-left" data-anim="hidden">
+            <span class="text-primary text-22 sm:text-26">30 000</span> <span class="text-16"><span class="text-primary">₽</span> / взрослый</span>
+          </li>
+          <li class="font-normal leading-2 ease-linear duration-10 clip-path clip-path-left" data-anim="hidden">
+            <span class="text-primary text-22 sm:text-26">15 000</span> <span class="text-16"><span class="text-primary">₽</span> / дети от 3 до 14</span>
+          </li>
+          <li class="font-normal leading-2 ease-linear duration-10 clip-path clip-path-left" data-anim="hidden">
+            <span class="text-primary text-22 sm:text-26">Бесплатно</span> <span class="text-16">/ дети до 3 лет</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Бронь -->
+
+<section class="container" id="reservation"></section>
 
 <%= footer({loader, picture}) %>
