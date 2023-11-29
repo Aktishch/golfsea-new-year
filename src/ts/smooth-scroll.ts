@@ -51,30 +51,7 @@ export default (): void => {
 
     if (!wrapper) return
 
-    const stickys = wrapper.querySelectorAll('*[data-smooth-sticky]') as NodeListOf<Element>
     const layers = wrapper.querySelectorAll('*[data-smooth-layer]') as NodeListOf<Element>
-
-    stickys.forEach((element: Element): void => {
-      const sticky = element as HTMLElement
-
-      if (!sticky) return
-
-      let stickyPosition = 0
-
-      const createSmothSticky = (): void => {
-        if (
-          wrapper.getBoundingClientRect().top < 0 &&
-          wrapper.getBoundingClientRect().bottom - window.screen.height > 0
-        ) {
-          stickyPosition += (scrolledPage().top - wrapper.offsetTop - stickyPosition) * speed
-          sticky.style.transform = `translateY(${stickyPosition}px)`
-        }
-
-        window.requestAnimationFrame(createSmothSticky)
-      }
-
-      window.requestAnimationFrame(createSmothSticky)
-    })
 
     layers.forEach((element: Element): void => {
       const layer = element as HTMLElement
