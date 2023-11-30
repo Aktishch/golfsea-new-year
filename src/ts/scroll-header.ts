@@ -18,6 +18,11 @@ export default (): void => {
       header.classList.add('bg-black', 'backdrop-blur', 'md:py-2')
       logo.classList.remove('md:w-40')
       logo.classList.add('md:w-28')
+
+      prevOffsetTop > currentOffsetTop
+        ? header.classList.remove('-translate-y-full')
+        : header.classList.add('-translate-y-full')
+
       break
     }
 
@@ -29,10 +34,6 @@ export default (): void => {
       break
     }
     }
-
-    prevOffsetTop > currentOffsetTop
-      ? header.classList.remove('-translate-y-full')
-      : header.classList.add('-translate-y-full')
 
     prevOffsetTop = currentOffsetTop
   }

@@ -1,0 +1,33 @@
+<%
+  var data = {
+    title: '404',
+    status: false
+  }
+
+  var icon = _.template(require('./components/icon.html').default)
+  var picture = _.template(require('./components/picture.html').default)
+  var loader = _.template(require('./components/loader.html').default)({icon: icon({id: 'loader'})})
+  var preloader = require('./components/preloader.html').default
+  var header = _.template(require('./includes/header.html').default)
+  var footer = _.template(require('./includes/footer.html').default)
+%>
+
+<%= header({data, loader, preloader, icon, picture}) %>
+
+<!-- Главный блок -->
+
+<main class="container flex items-center justify-center relative overflow-hidden min-h-screen">
+  <div class="absolute inset-0">
+    <div class="pack bg-gray h-full">
+      <%= loader %>
+      <%= picture({src: 'img/pictures/bg-404', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+    </div>
+  </div>
+  <div class="flex flex-col items-center justify-center text-center relative">
+    <h1 class="font-semibold text-primary text-[8rem] sm:text-[11rem] lg:text-[14rem] leading-1 mb-8 lg:mb-12">404</h1>
+    <p class="font-normal text-14 sm:text-16 leading-4 mb-8 lg:mb-12">Возможно, запрашиваемая вами страница была перенесена или удалена</p>
+    <a class="btn btn-primary btn-lg btn-fill btn-gradient btn-glow font-alt" data-waved="dark" href="/">на главную</a>
+  </div>
+</main>
+
+<%= footer({data, loader, picture}) %>

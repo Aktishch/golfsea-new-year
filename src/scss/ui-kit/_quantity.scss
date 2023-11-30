@@ -1,8 +1,8 @@
 .quantity {
-  @apply flex items-center justify-between border border-solid border-gray rounded-full w-max p-1;
+  @apply flex items-center justify-between bg-white bg-opacity-10 border border-solid border-white border-opacity-10 w-full py-2 px-3;
 
   &-btn {
-    @apply rounded-max w-8 h-8;
+    @apply rounded-1 w-7 h-7;
   }
 
   &-cover {

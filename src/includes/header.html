@@ -24,6 +24,8 @@
     <%= preloader %>
   </div>
 
+  <% if (data.status) { %>
+
   <!-- Шапка документа -->
 
   <header class="container flex items-center justify-between gap-5 fixed z-3 top-0 left-0 right-0 bg-opacity-50 py-2 md:py-4 duration-3" data-header>
@@ -40,3 +42,5 @@
   <!-- Плавная прокрутка -->
 
   <div id="smooth-scroll" data-smooth-speed="4">
+
+    <% } %>

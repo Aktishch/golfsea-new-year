@@ -13,30 +13,6 @@
   }
 
   &-custom &__content>.f-button.is-close-btn {
-    @apply top-2 right-2 bg-white text-black rounded-max shadow-md;
+    @apply top-2 right-2 bg-transparent text-white rounded-max border border-solid border-white opacity-50;
   }
-}
-
-.swiper {
-  &-pagination {
-    @apply flex items-center justify-center static;
-
-    & &-bullet {
-      @apply bg-current w-3 h-3 duration-2;
-    }
-  }
-
-  &-button {
-
-    &-prev,
-    &-next {
-      &::after {
-        @apply hidden;
-      }
-    }
-  }
-}
-
-#air-datepicker-global-container {
-  z-index: 1100;
 }

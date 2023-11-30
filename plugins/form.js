@@ -44,12 +44,10 @@ module.exports = plugin(({ addComponents, theme }) => {
 
       '&-error': {
         fontSize: theme('fontSize.12'),
-        color: theme('colors.white.DEFAULT'),
-        backgroundColor: theme('colors.red.DEFAULT'),
+        color: theme('colors.red.DEFAULT'),
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
+        justifyContent: 'flex-end',
+        textAlign: 'right',
         position: 'absolute',
         left: 0,
         right: 0,
@@ -57,7 +55,6 @@ module.exports = plugin(({ addComponents, theme }) => {
         height: '16px',
         opacity: 0,
         visibility: 'hidden',
-        borderRadius: '4px',
         transition: '0.3s ease',
       },
     },

@@ -1,0 +1,21 @@
+<%
+  var icon = _.template(require('../components/icon.html').default)
+  var picture = _.template(require('../components/picture.html').default)
+  var loader = _.template(require('../components/loader.html').default)({icon: icon({id: 'loader'})})
+%>
+
+<dialog class="dialog dialog-xs relative py-12 px-4">
+  <div class="absolute inset-0">
+    <div class="pack bg-gray h-full">
+      <%= loader %>
+      <%= picture({src: 'img/pictures/submit-bg', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+    </div>
+  </div>
+  <div class="flex flex-col items-center justify-center relative text-center">
+    <span class="text-red text-[10rem] mb-5">
+      <%= icon({id: 'error'}) %>
+    </span>
+    <h2 class="font-normal text-24 leading-2 mb-3">Ошибка</h2>
+    <p class="font-normal text-16 leading-4 opacity-60">Возникла непредвиденная ошибка</p>
+  </div>
+</dialog>

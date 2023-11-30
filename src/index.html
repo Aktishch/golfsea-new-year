@@ -16,7 +16,7 @@
 
 <!-- Главный блок -->
 
-<main class="main container flex items-end sm:items-center relative overflow-hidden min-h-[700px] lg:min-h-screen xxl:min-h-[900px] pt-40" data-smooth-wrapper>
+<main class="main container flex items-end sm:items-center relative overflow-hidden min-h-[650px] sm:min-h-[700px] lg:min-h-screen xxl:min-h-[900px] pt-40" data-smooth-wrapper>
   <div class="main__bg absolute inset-0">
     <div class="pack bg-gray h-full" data-smooth-layer="bottom" data-smooth-speed="4" data-smooth-depth="2">
       <%= loader %>
@@ -77,7 +77,7 @@
     text: 'Дед Мороз и Снегурочка'
   },
   {
-    icon: 'rabbit',
+    icon: 'bear',
     text: 'Детская праздничная программа'
   },
   {
@@ -86,7 +86,7 @@
   }
 ] %>
 
-<section class="container relative overflow-hidden pb-0">
+<section class="container relative bg-black overflow-hidden pb-0 -mt-1">
   <div class="absolute inset-0">
     <div class="pack pack-rect-md w-full h-full">
       <%= picture({src: 'img/pictures/texture', format: '.png', webp: true, classes: 'image sm:image-scale-down image-top-left sm:image-center', data: false, loading: 'eager'}) %>
@@ -100,7 +100,7 @@
   <div class="relative">
     <h2 class="font-alt font-normal uppercase text-center text-28 sm:text-38 xl:text-48 mb-7 md:mb-10 xl:mb-14 ease-linear duration-10 clip-path clip-path-down" data-anim="hidden">Программа гала-ужина “Русские забавы”</h2>
     <div class="flex flex-col xl:flex-row xl:justify-between xl:gap-10">
-      <div class="order-2 xl:order-1 relative w-full sm:max-w-[450px] md:max-w-[600px] xl:max-w-[480px] p-2 sm:p-4 -mt-8 sm:-mt-20 xl:mt-0 mx-auto xl:mx-0 ease-in duration-5 anim anim-right" data-anim="hidden">
+      <div class="order-2 xl:order-1 relative z-1 w-full sm:max-w-[450px] md:max-w-[600px] xl:max-w-[480px] p-2 sm:p-4 -mt-8 sm:-mt-20 xl:mt-0 mx-auto xl:mx-0 ease-in duration-5 anim anim-right" data-anim="hidden">
         <div class="absolute inset-0">
           <div class="pack bg-gray h-full">
             <%= loader %>
@@ -121,7 +121,7 @@
           <a class="btn btn-primary btn-lg btn-fill btn-gradient btn-glow font-alt w-full xs:w-max" data-waved="dark" href="" download>СКАЧАТЬ МЕНЮ</a>
         </div>
       </div>
-      <div class="order-1 xl:order-2 w-full xl:max-w-[710px] ease-in duration-5 anim anim-left" data-anim="hidden">
+      <div class="order-1 xl:order-2 relative w-full xl:max-w-[710px] ease-in duration-5 anim anim-left" data-anim="hidden">
         <div class="pack pack-rect-md md:pack-rect-sm bg-gray h-full -mx-4 sm:mx-0">
           <%= loader %>
           <%= picture({src: 'img/pictures/build', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
@@ -163,6 +163,83 @@
 
 <!-- Бронь -->
 
-<section class="container" id="reservation"></section>
+<section class="container relative overflow-hidden" id="reservation">
+  <div class="absolute inset-0">
+    <div class="pack pack-rect-md w-full h-full">
+      <%= picture({src: 'img/pictures/reservation-bg', format: '.png', webp: true, classes: 'image image-bottom-left', data: false, loading: 'eager'}) %>
+    </div>
+    <div class="absolute -top-80 -left-[70%] opacity-50 -scale-x-100">
+      <span class="text-primary-light text-[120rem] animate-pulse">
+        <%= icon({id: 'lines'}) %>
+      </span>
+    </div>
+  </div>
+  <div class="relative">
+    <h2 class="font-alt font-normal uppercase text-center text-28 sm:text-38 xl:text-48 mb-7 md:mb-10 xl:mb-14 ease-linear duration-10 clip-path clip-path-down" data-anim="hidden">Забронировать место</h2>
+    <div class="flex flex-col xl:flex-row xl:justify-between">
+      <div class="order-2 xl:order-1 relative z-1 bg-gray w-full sm:max-w-[450px] md:max-w-[570px] p-4 sm:p-6 md:p-10 -mt-8 sm:-mt-20 xl:mt-0 mx-auto xl:mx-0 ease-in duration-5 anim anim-right" data-anim="hidden">
+        <p class="font-normal text-16 leading-1 opacity-60 mb-2 sm:mb-4">Я иду на</p>
+        <h3 class="font-alt font-normal text-primary text-26 sm:text-30 leading-3 mb-4 sm:mb-7">Гала-ужин в Геленджик Гольф Резорт</h3>
+        <div class="flex flex-wrap items-center gap-4 md:gap-6 mb-7 md:mb-11">
+          <span class="font-normal text-16 leading-1">31 декабря в 21:00</span>
+          <span class="font-normal text-16 leading-1 opacity-60">Ресторан CLUB HOUSE</span>
+        </div>
+        <form class="form mb-4 md:mb-6" data-form="submit">
+          <input type="hidden" value="Забронировать место" name="theme">
+          <div class="grid grid-cols-1 xs:grid-cols-2 gap-6 mb-7 md:mb-10">
+            <label class="xs:col-2 form-label" data-label="input">
+              <span class="font-normal text-16 leading-1 mb-3">Ваше имя</span>
+              <div class="form-wrapper">
+                <div class="input-cover">
+                  <input class="input input-fade input-white input-lg" data-input="name" type="text" placeholder="Напишите имя..." name="name">
+                </div>
+                <span class="form-error" data-error>Пожалуйста, введите ваше имя!</span>
+              </div>
+            </label>
+            <label class="xs:col-2 form-label" data-label="input">
+              <span class="font-normal text-16 leading-1 mb-3">Ваш телефон</span>
+              <div class="form-wrapper">
+                <div class="input-cover">
+                  <input class="input input-fade input-white input-lg" data-input="tel" type="tel" placeholder="+ 7 (_ _ _) _ _ _ - _ _ - _ _" name="tel">
+                </div>
+                <span class="form-error" data-error>Пожалуйста, введите ваш номер!</span>
+              </div>
+            </label>
+            <div class="flex flex-col">
+              <span class="font-normal text-16 leading-1 mb-3">Взрослые</span>
+              <div class="quantity" data-quantity>
+                <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-decrease data-waved="dark" type="button">-</button>
+                <div class="quantity-cover input-cover">
+                  <input class="quantity-input input input-fade" data-input="number" type="text" value="1" maxlength="3" name="quantity">
+                </div>
+                <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-increase data-waved="dark" type="button">+</button>
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-normal text-16 leading-1 mb-3">Дети (от 3 до 14 лет)</span>
+              <div class="quantity" data-quantity>
+                <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-decrease data-waved="dark" type="button">-</button>
+                <div class="quantity-cover input-cover">
+                  <input class="quantity-input input input-fade" data-input="number" type="text" value="1" maxlength="3" name="quantity">
+                </div>
+                <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-increase data-waved="dark" type="button">+</button>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg btn-fill btn-gradient btn-glow font-alt w-full xs:w-max" data-waved="dark" type="submit">отправить заявку</button>
+        </form>
+        <div class="flex">
+          <div class="hover:underline underline-offset-4 font-normal text-10 leading-3 opacity-80 cursor-pointer" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">Отправляя форму, Вы даете согласие на обработку Ваших персональных данных</div>
+        </div>
+      </div>
+      <div class="order-1 xl:order-2 relative w-full ease-in duration-5 anim anim-left" data-anim="hidden">
+        <div class="pack pack-rect-md md:pack-rect-sm bg-gray h-full -mx-4 sm:mx-0">
+          <%= loader %>
+          <%= picture({src: 'img/pictures/restaurant', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<%= footer({loader, picture}) %>
+<%= footer({data, loader, picture}) %>

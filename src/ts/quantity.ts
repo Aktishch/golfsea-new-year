@@ -5,7 +5,7 @@ const quantityDecrease = (event: InputEvent): void => {
 
   --value
   input.value = String(value)
-  if (value < 1) input.value = '1'
+  if (value < 0) input.value = '0'
 }
 
 const quantityIncrease = (event: InputEvent): void => {

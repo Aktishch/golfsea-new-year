@@ -45,11 +45,11 @@ module.exports = {
       },
 
       grey: {
-        DEFAULT: '#f6f7f9',
+        DEFAULT: '#E0E0E0',
       },
 
       red: {
-        DEFAULT: '#be1b1b',
+        DEFAULT: '#DC6464',
       },
     },
 
@@ -216,7 +216,6 @@ module.exports = {
   plugins: [
     require('./plugins/container'),
     require('./plugins/dialog'),
-    require('./plugins/card'),
     require('./plugins/pack'),
     require('./plugins/picture'),
     require('./plugins/form'),

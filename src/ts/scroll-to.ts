@@ -6,8 +6,7 @@ const scrollTo = (event: Event): void => {
   const link = event.target as HTMLAnchorElement
   const id = String(link.getAttribute('href'))
   const block = document.querySelector(id) as HTMLElement
-  const header = document.querySelector('*[data-header]') as HTMLElement
-  const offsetTop: number = block.getBoundingClientRect().top + scrolledPage().top - header.offsetHeight
+  const offsetTop: number = block.getBoundingClientRect().top + scrolledPage().top
 
   window.scrollTo({
     top: offsetTop,
