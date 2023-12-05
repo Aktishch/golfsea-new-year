@@ -1,3 +1,4 @@
+import { media } from './functions/media'
 import { scrolledPage } from './functions/scrolled-page'
 
 const scrollTo = (event: Event): void => {
@@ -6,7 +7,11 @@ const scrollTo = (event: Event): void => {
   const link = event.target as HTMLAnchorElement
   const id = String(link.getAttribute('href'))
   const block = document.querySelector(id) as HTMLElement
-  const offsetTop: number = block.getBoundingClientRect().top + scrolledPage().top
+  const header = document.querySelector('*[data-header]') as HTMLElement
+  const offsetTop: number =
+    (document.documentElement as HTMLElement).clientWidth > media.md
+      ? block.getBoundingClientRect().top + scrolledPage().top
+      : block.getBoundingClientRect().top + scrolledPage().top - header.offsetHeight
 
   window.scrollTo({
     top: offsetTop,
