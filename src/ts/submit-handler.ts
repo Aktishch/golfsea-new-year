@@ -1,6 +1,12 @@
 import { dialogOpen, dialogNotClosing, dialogClose } from './fancybox'
 import { validation } from './functions/validation'
 
+declare global {
+  interface Window {
+    ym: any
+  }
+}
+
 const submitHandler = (event: Event): void => {
   const form = event.target as HTMLFormElement
 
@@ -30,6 +36,7 @@ const submitHandler = (event: Event): void => {
         return response.json()
       })
       .then((response: Response): void => {
+        window.ym(95767046, 'reachGoal', 'stol')
         dialogClose()
 
         switch (response.status) {

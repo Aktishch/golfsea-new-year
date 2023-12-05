@@ -20,8 +20,8 @@ export default (): void => {
       logo.classList.add('md:w-28')
 
       prevOffsetTop > currentOffsetTop
-        ? header.classList.remove('-translate-y-full')
-        : header.classList.add('-translate-y-full')
+        ? header.classList.remove('md:-translate-y-full')
+        : header.classList.add('md:-translate-y-full')
 
       break
     }
