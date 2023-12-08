@@ -131,6 +131,33 @@
   </div>
 </section>
 
+<!-- О нас -->
+
+<section class="container relative pb-0">
+  <div class="flex items-center justify-center absolute inset-0">
+    <div class="bg-brown rounded-full blur-3xl w-full max-w-[1400px] h-64"></div>
+    <div class="hidden xl:block absolute -top-1/2 -left-[55%] opacity-50 rotate-45">
+      <span class="text-primary-light text-[100rem] animate-pulse">
+        <%= icon({id: 'lines'}) %>
+      </span>
+    </div>
+  </div>
+  <div class="relative">
+    <h2 class="font-alt font-normal uppercase text-center text-28 sm:text-38 xl:text-48 mb-7 md:mb-10 xl:mb-14 ease-linear duration-10 clip-path clip-path-down" data-anim="hidden">больше о нашем комплексе </h2>
+    <a class="pack pack-rect-md sm:pack-[55] bg-gray ease-in duration-5 anim anim-fade" data-anim="hidden" data-fancybox href="https://www.youtube.com/watch?v=ywj5UWC5dyU">
+      <%= loader %>
+      <%= picture({src: 'img/pictures/about-img', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+      <div class="flex items-center justify-center absolute inset-0">
+        <button class="btn btn-primary btn-glow bg-white text-7xl md:text-9xl rounded-max" data-waved="dark">
+          <span class="-m-px">
+            <%= icon({id: 'play'}) %>
+          </span>
+        </button>
+      </div>
+    </a>
+  </div>
+</section>
+
 <!-- Стоимость -->
 
 <section class="container pb-0">

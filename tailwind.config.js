@@ -51,6 +51,10 @@ module.exports = {
       red: {
         DEFAULT: '#DC6464',
       },
+
+      brown: {
+        DEFAULT: '#4F1516',
+      },
     },
 
     fontFamily: {
