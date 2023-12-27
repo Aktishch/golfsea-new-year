@@ -2,10 +2,17 @@ import { touchDevice } from './functions/touch-device'
 import { scrolledPage } from './functions/scrolled-page'
 import { animation } from './animation'
 
+declare global {
+  interface Window {
+    safari: boolean | undefined
+  }
+}
+
 export default (): void => {
   const smoothScroll = document.querySelector('#smooth-scroll') as HTMLElement
+  const isSafari: boolean = window.safari !== undefined
 
-  if (!smoothScroll || touchDevice()) return
+  if (!smoothScroll || touchDevice() || isSafari) return
 
   const html = document.documentElement as HTMLElement
   const body = document.body as HTMLBodyElement
